@@ -33,7 +33,7 @@ public class Dfs{
         addEdge(li, 4, 6);
 
         //Call the dfs function and initiate the recursion
-        dfs(1, vis);
+        dfs(1);
         
         //After the recursion completes we print the vis Array
         System.out.println("\n" + Arrays.toString(vis));
@@ -44,7 +44,7 @@ public class Dfs{
         a.get(u).add(v);
     }
 
-    public static void dfs(int v, int vis[]){
+    public static void dfs(int v){
 
         //Make the Vertex v Visited and Print it
         vis[v] = 1;
@@ -52,7 +52,7 @@ public class Dfs{
 
         for(int i : li.get(v)){
             if(vis[i] == 0){
-                dfs(i, vis);
+                dfs(i);
             }
         }
     }

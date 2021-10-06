@@ -35,7 +35,7 @@ public class ConComp{
         //Increase the number of Connected Components
         for(int i = 1; i < v+1; i++){
             if(vis[i] == 0){
-                dfs(i, vis);
+                dfs(i);
                 cnt++;
             }
         }
@@ -49,7 +49,7 @@ public class ConComp{
         a.get(u).add(v);
     }
 
-    public static void dfs(int v, int vis[]){
+    public static void dfs(int v){
 
         //Make the Vertex v Visited and Print it
         vis[v] = 1;
@@ -57,7 +57,7 @@ public class ConComp{
 
         for(int i : li.get(v)){
             if(vis[i] == 0){
-                dfs(i, vis);
+                dfs(i);
             }
         }
     }
